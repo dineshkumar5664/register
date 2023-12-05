@@ -1,0 +1,10 @@
+table,th,td{
+            border:2px solid red;
+             border-collapse:collapse;
+}
+tr{
+     text-align:center;
+}
+.yellow{
+background-color:yellow;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css\\table.css' %}">
+</head>
+<body>
+<h1 style="color:green;">Welcome to django application</h1>
+<h2>Here THe all Employee Data are Listed...</h2>
+<table style width="100%">
+    <tr style="background-color:blue">
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Phone No</th>
+        <th>Address</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr class="yellow">
+        {% for e in emp %}
+        <td>{{e.empid}}</td>
+        <td>{{e.empname}}</td>
+        <td>{{e.empphno}}</td>
+        <td>{{e.empsalary}}</td>
+        <td>{{e.empaddress}}</td>
+        <td><a href="/update/{{e.id}}">Edit</a> </td>
+        <td><a href="/delete/{{e.id}}">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table> <br><br>
+<button value="addemployee"><a href="/addemploye">Add a new employeee</a> </button>
+</body>
+</html>
